@@ -38,6 +38,7 @@ def get_logger(name: str = __name__) -> logging.Logger:
         root_logger.setLevel(logging.DEBUG)
         root_logger.addHandler(file_handler)
         root_logger.addHandler(console_handler)
+        logger.propagate = False
 
         _LOGGING_CONFIGURED = True
 
