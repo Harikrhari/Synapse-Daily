@@ -38,7 +38,8 @@ def get_logger(name: str = __name__) -> logging.Logger:
         root_logger.setLevel(logging.DEBUG)
         root_logger.addHandler(file_handler)
         root_logger.addHandler(console_handler)
-        logger.propagate = False
+        # logger.propagate = False  <-- This was causing the issue because it applies to the logger instance
+
 
         _LOGGING_CONFIGURED = True
 
